@@ -25,7 +25,7 @@ renderer.render(scene,camera);
 
 //TorusKnot
 const geometry =new THREE.TorusKnotGeometry(2, 0.5, 81, 10)
-const material = new THREE.MeshStandardMaterial({color:0x049ef4,map: new THREE.TextureLoader().load("NormalMap.png")})
+const material = new THREE.MeshStandardMaterial({color:0x049ef4,map: new THREE.TextureLoader().load("/Images/NormalMap.png")})
 material.metalness = 0.7
 material.roughness= 0.2
 const torus = new THREE.Mesh(geometry, material)
@@ -66,12 +66,12 @@ function addStars(){
 Array(300).fill().forEach(addStars);
 
 //Poner un background a la pagina 
-const setBackground = new THREE.TextureLoader().load('space.jpg');
+const setBackground = new THREE.TextureLoader().load('/Images/space.jpg');
 scene.background = setBackground
 
 //Luna con un mapa de normal
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg')
+const moonTexture = new THREE.TextureLoader().load('/Images/moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('/Images/normal.jpg')
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3,32,32),
   new THREE.MeshStandardMaterial({map: moonTexture, normalMap:normalTexture})
